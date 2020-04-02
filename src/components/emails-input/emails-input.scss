@@ -1,2 +1,53 @@
 @import "../../sass/variables";
 
+.emails-input{
+  background: #F8F8F7;
+  max-height: 148px;
+  height: 148px;
+  padding: 24px 50px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.emails-input-title{
+  font-size: 20px;
+  line-height: 27px;
+  color: #050038;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
+
+.emails-input-area{
+  background: #FFFFFF;
+  border: 1px solid #C3C2CF;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 100%;
+  max-height: 96px;
+  height: 96px;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.emails-input-area-mail-input{
+  outline: none;
+  border: none;
+  color: #C3C2CF;
+  margin: 4px;
+}
+.emails-input-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.emails-input-item{
+  margin: 4px;
+  background: rgba(102, 153, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.emails-input-item-close{
+  color: #050038;
+}

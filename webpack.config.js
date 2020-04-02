@@ -4,11 +4,14 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
   entry: {
     app: './src/index.js',
-    'emails-input': './src/components/emails-input/index.js',
+    EmailsInput: './src/components/emails-input/emails-input.js',
   },
   output: {
     filename: '[name].dist.js',
     path: path.resolve(__dirname, 'dist'),
+    library: '[name]',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
   },
   mode: 'development',
   plugins: [
