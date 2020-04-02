@@ -31,10 +31,10 @@ emailsInputAPI.getAllMails();
 emailsInputAPI.addNewMailToList('test');
 
 // get valid mail count
-emailsInputAPIgetInvalidMailCount();
+emailsInputAPI.getInvalidMailCount();
 
 // get invalid mail count
-emailsInputAPIgetInvalidMailCount();
+emailsInputAPI.getInvalidMailCount();
 
 ```
 
