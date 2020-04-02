@@ -24,7 +24,7 @@ export default class Main {
     this.initListeners();
 
     // this is a global umd class
-    this.emailsInoutAPI = new EmailsInput(this.inputContainerNode, {
+    this.emailsInputAPI = new EmailsInput(this.inputContainerNode, {
       onNewMail: this.onNewMailListener,
     });
   }
@@ -42,9 +42,9 @@ export default class Main {
   }
 
   initListeners() {
-    this.addButton.addEventListener('click', () => this.emailsInoutAPI.addNewMailToList(getRandomMail()));
-    this.countButton.addEventListener('click', () => alert(this.emailsInoutAPI.getValidMailCount()));
-    this.deleteButton.addEventListener('click', () => this.emailsInoutAPI.addNewMails([getRandomMail(), getRandomMail()]));
+    this.addButton.addEventListener('click', () => this.emailsInputAPI.addNewMailToList(getRandomMail()));
+    this.countButton.addEventListener('click', () => alert(this.emailsInputAPI.getValidMailCount()));
+    this.deleteButton.addEventListener('click', () => this.emailsInputAPI.addNewMails([getRandomMail(), getRandomMail()]));
   }
 }
 

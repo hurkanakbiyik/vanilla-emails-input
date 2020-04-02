@@ -13,18 +13,18 @@ body {
 }
 
 .emails {
-  width: 540px;
-  height: 300px;
   background: #FFFFFF;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
-  margin: 16px;
+}
+
+.emails-input {
+  width: 100%;
+  height: 100%;
 }
 
 .emails-header {
   background: #F8F8F7;
-  max-height: 148px;
-  height: 148px;
   padding: 24px 50px 32px;
   display: flex;
   flex-direction: column;
@@ -55,4 +55,15 @@ body {
 }
 .emails-footer button:hover {
   background: #050038;
+}
+
+.emails-input-container {
+  height: 96px;
+  min-height: 96px;
+  width: 100%;
+}
+
+.emails-input-container-big {
+  height: 220px;
+  width: 100%;
 }

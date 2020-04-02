@@ -1,6 +1,46 @@
-Webpack + Vanilla + Babel + Mocha Project
+# Emails Input Component
 
-Install all npm modules.
+## Usage
+
+Implement dist files into your html.
+
+`<link rel="stylesheet" href="dist/EmailsInput.dist.css">`
+
+`<script src="dist/EmailsInput.dist.js"></script>`
+
+Now you can use `EmailsInput` class in your js.
+
+```
+const myElement = document.querySelector('#my-element');
+const emailsInputAPI = new EmailsInput(myElement, {
+  onNewMail: (mailData) => {
+    // this will fire when there is new mail
+  },
+});
+
+// add existing email list with deleting old ones
+emailsInputAPI.addNewMails(['test@test.test']);
+
+// add existing email list with not deleting old ones
+emailsInputAPI.addNewMails(['secondTest@test.test'], false);
+
+// get all mails
+emailsInputAPI.getAllMails();
+
+// add a mail to list
+emailsInputAPI.addNewMailToList('test');
+
+// get valid mail count
+emailsInputAPIgetInvalidMailCount();
+
+// get invalid mail count
+emailsInputAPIgetInvalidMailCount();
+
+```
+
+
+## Local Usage
+
 
 `npm install`
 
@@ -16,8 +56,4 @@ Open `index.html` in any browser.
 
 Open `index.html` in any browser.
 
-### Test
-
-You can run all unit tests and see coverage results.
-
-`npm run test`
+You can check index.js.
