@@ -1,22 +1,5 @@
 @import "../../sass/variables";
 
-.emails-input{
-  background: #F8F8F7;
-  max-height: 148px;
-  height: 148px;
-  padding: 24px 50px 32px;
-  display: flex;
-  flex-direction: column;
-}
-
-.emails-input-title{
-  font-size: 20px;
-  line-height: 27px;
-  color: #050038;
-  font-weight: 300;
-  margin-bottom: 24px;
-}
-
 .emails-input-area{
   background: #FFFFFF;
   border: 1px solid #C3C2CF;
@@ -28,6 +11,8 @@
   overflow: auto;
   font-size: 14px;
   line-height: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .emails-input-area-mail-input{
@@ -35,19 +20,38 @@
   border: none;
   color: #C3C2CF;
   margin: 4px;
+  padding: 0 12px;
+  font-size: 14px;
+  line-height: 24px;
 }
 .emails-input-list{
   display: flex;
   flex-wrap: wrap;
 }
-.emails-input-item{
+.emails-input-list-item{
   margin: 4px;
   background: rgba(102, 153, 255, 0.2);
-  border-radius: 50%;
+  border-radius: 100px;
+  padding: 0 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-.emails-input-item-close{
   color: #050038;
+  cursor: pointer;
+  &:hover{
+    color: #D92929;
+    background: #fff;
+  }
+  &:after{
+    content: 'x';
+    margin-left: 12px;
+  }
+
+  &--fail{
+    background: none;
+    border-bottom: 1px dashed #D92929;
+    border-radius: 0;
+    padding: 0;
+    margin: 4px 12px;
+  }
 }

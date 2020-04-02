@@ -17,3 +17,21 @@ body{
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
 }
+
+
+.emails-header{
+  background: #F8F8F7;
+  max-height: 148px;
+  height: 148px;
+  padding: 24px 50px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.emails-input-title{
+  font-size: 20px;
+  line-height: 27px;
+  color: #050038;
+  font-weight: 300;
+  margin-bottom: 24px;
+}
