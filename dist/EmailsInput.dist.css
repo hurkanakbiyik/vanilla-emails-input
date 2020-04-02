@@ -1,4 +1,4 @@
-.emails-input-area{
+.emails-input-area {
   background: #FFFFFF;
   border: 1px solid #C3C2CF;
   box-sizing: border-box;
@@ -13,7 +13,7 @@
   flex-direction: column;
 }
 
-.emails-input-area-mail-input{
+.emails-input-area-mail-input {
   outline: none;
   border: none;
   color: #C3C2CF;
@@ -24,12 +24,12 @@
   flex: 1;
 }
 
-.emails-input-list{
+.emails-input-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.emails-input-list-item{
+.emails-input-list-item {
   margin: 4px;
   background: rgba(102, 153, 255, 0.2);
   border-radius: 100px;
@@ -39,22 +39,21 @@
   justify-content: space-between;
   color: #050038;
   cursor: pointer;
-  &:hover{
-    background: #fff;
-    &:after{
-      color: #D92929;
-    }
-  }
-  &:after{
-    content: 'x';
-    margin-left: 12px;
-  }
-
-  &--fail{
-    background: none;
-    border-bottom: 1px dashed #D92929;
-    border-radius: 0;
-    padding: 0;
-    margin: 4px 12px;
-  }
+}
+.emails-input-list-item:hover {
+  background: #fff;
+}
+.emails-input-list-item:hover:after {
+  color: #D92929;
+}
+.emails-input-list-item:after {
+  content: "x";
+  margin-left: 12px;
+}
+.emails-input-list-item--fail {
+  background: none;
+  border-bottom: 1px dashed #D92929;
+  border-radius: 0;
+  padding: 0;
+  margin: 4px 12px;
 }

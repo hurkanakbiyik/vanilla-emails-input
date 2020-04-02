@@ -1,25 +1,27 @@
-html,body{
+html, body {
   padding: 0;
   margin: 0;
   height: 100%;
   width: 100%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
-body{
+
+body {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.emails{
+
+.emails {
   width: 540px;
   height: 300px;
   background: #FFFFFF;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   border-radius: 8px;
+  margin: 16px;
 }
 
-
-.emails-header{
+.emails-header {
   background: #F8F8F7;
   max-height: 148px;
   height: 148px;
@@ -28,28 +30,29 @@ body{
   flex-direction: column;
 }
 
-.emails-input-title{
+.emails-input-title {
   font-size: 20px;
   line-height: 27px;
   color: #050038;
   font-weight: 300;
   margin-bottom: 24px;
 }
-.emails-footer{
+
+.emails-footer {
   padding: 24px 50px;
-  button{
-    padding: 8px 16px;
-    outline: none;
-    font-size: 14px;
-    line-height: 24px;
-    background: #4262FF;
-    border-radius: 6px;
-    color: #FFFFFF;
-    border: none;
-    margin: 0 8px;
-    cursor: pointer;
-    &:hover{
-      background: #050038;
-    }
-  }
+}
+.emails-footer button {
+  padding: 8px 16px;
+  outline: none;
+  font-size: 14px;
+  line-height: 24px;
+  background: #4262FF;
+  border-radius: 6px;
+  color: #FFFFFF;
+  border: none;
+  margin: 0 8px;
+  cursor: pointer;
+}
+.emails-footer button:hover {
+  background: #050038;
 }

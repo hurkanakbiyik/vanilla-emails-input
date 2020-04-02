@@ -1,6 +1,5 @@
 # node and IDEs
 output/
-dist/
 exports/
 node_modules/
 .idea/

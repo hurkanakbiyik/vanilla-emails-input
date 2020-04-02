@@ -13,13 +13,14 @@ function validateEmail(email) {
 export default class EmailsInput {
   constructor(element, options) {
     if (!element) {
-      console.warn('Element is not exist for emails input');
+      console.warn('Element does not exist for emails input');
       return;
     }
     this.element = element;
     this.options = options;
     this.mailList = [];
-    this.isPasteOn = false;
+    this.latestId = 0;
+
     this.initHtml();
 
     this.initSelectors();
@@ -43,7 +44,7 @@ export default class EmailsInput {
   }
 
   onItemDeleteClick(item) {
-    this.mailList.splice(item.dataset.id, 1);
+    this.mailList.splice(this.findMailIndex(parseInt(item.dataset.id, 0)), 1);
     if (item.parentNode) {
       item.parentNode.removeChild(item);
     }
@@ -58,28 +59,42 @@ export default class EmailsInput {
     `;
   }
 
-  appendNewMailToResult(newMail, id) {
+  appendNewMailToResult(mailData) {
     const element = document.createElement('div');
     element.classList.add('emails-input-list-item');
-    if (!validateEmail(newMail)) {
+    if (!mailData.isValid) {
       element.classList.add('emails-input-list-item--fail');
     }
-    element.dataset.id = id;
-    element.innerText = newMail;
+    element.dataset.id = mailData.id;
+    element.innerText = mailData.text;
     this.initItemDeleteListener(element);
     this.listElement.append(element);
+    this.inputArea.scrollTop = this.inputArea.scrollHeight;
   }
 
   clearInput() {
     this.mailInputElement.value = '';
-    this.inputArea.scrollTop = this.inputArea.scrollHeight;
   }
 
   addNewMailToList(newMail) {
     if (newMail && newMail !== '') {
-      this.mailList.push(newMail);
-      this.appendNewMailToResult(newMail, this.mailList.length);
+      this.latestId = this.latestId + 1;
+      const mailData = {
+        id: this.latestId,
+        text: newMail,
+        isValid: validateEmail(newMail),
+      };
+      this.mailList.push(mailData);
+      this.appendNewMailToResult(mailData);
+
+      if (typeof this.options.onNewMail === 'function') {
+        this.options.onNewMail(mailData);
+      }
     }
+  }
+
+  findMailIndex(searchId) {
+    return this.mailList.map((mail) => mail.id).indexOf(searchId);
   }
 
   onKeyUpEnter() {
@@ -120,5 +135,25 @@ export default class EmailsInput {
       default:
         break;
     }
+  }
+
+  getValidMailCount() {
+    return this.mailList.filter((mail) => mail.isValid).length;
+  }
+
+  getInvalidMailCount() {
+    return this.mailList.filter((mail) => !mail.isValid).length;
+  }
+
+  getAllMails() {
+    return this.mailList.map((mail) => mail.text);
+  }
+
+  addNewMails(newList, reset = true) {
+    if (reset) {
+      this.mailList = [];
+      this.listElement.innerHTML = '';
+    }
+    newList.forEach((newMail) => this.addNewMailToList(newMail));
   }
 }
