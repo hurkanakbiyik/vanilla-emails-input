@@ -7,7 +7,8 @@
     "test": "nyc mocha ./src/**/*.test.js --require @babel/register --require ignore-styles",
     "test:report": "npm run test && nyc report --reporter=html",
     "build": "webpack --config webpack.config.js",
-    "dev": "webpack --config webpack.config.js --watch"
+    "dev": "webpack --config webpack.config.js --watch",
+    "start": "node server.js"
   },
   "author": "hurkan akbiyik",
   "license": "MIT",
@@ -33,5 +34,8 @@
     "sass-loader": "^8.0.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
