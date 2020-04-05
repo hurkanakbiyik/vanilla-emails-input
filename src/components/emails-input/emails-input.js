@@ -17,7 +17,7 @@ export default class EmailsInput {
       return;
     }
     this.element = element;
-    this.options = options;
+    this.options = options || {};
     this.mailList = [];
     this.latestId = 0;
 
